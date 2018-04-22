@@ -9392,3 +9392,189 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 80ms (Views: 76.0ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/" for 78.16.129.40 at 2018-04-22 12:41:08 +0000
+Cannot render console from 78.16.129.40! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "carts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-04-22 12:41:08.702837"], ["updated_at", "2018-04-22 12:41:08.702837"]]
+  [1m[35m (12.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+  [1m[36mOrderitem Load (0.1ms)[0m  [1m[34mSELECT "orderitems".* FROM "orderitems" WHERE "orderitems"."cart_id" = ?[0m  [["cart_id", 34]]
+  Rendered carts/_cart.html.erb (13.5ms)
+Completed 200 OK in 323ms (Views: 286.0ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/" for 78.16.129.40 at 2018-04-22 12:41:14 +0000
+Cannot render console from 78.16.129.40! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "carts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-04-22 12:41:14.413190"], ["updated_at", "2018-04-22 12:41:14.413190"]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  [1m[36mOrderitem Load (0.1ms)[0m  [1m[34mSELECT "orderitems".* FROM "orderitems" WHERE "orderitems"."cart_id" = ?[0m  [["cart_id", 35]]
+  Rendered carts/_cart.html.erb (1.5ms)
+Completed 200 OK in 36ms (Views: 25.7ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/products" for 78.16.129.40 at 2018-04-22 12:41:23 +0000
+Cannot render console from 78.16.129.40! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProductsController#index as HTML
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "carts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-04-22 12:41:23.420375"], ["updated_at", "2018-04-22 12:41:23.420375"]]
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (19.1ms)
+  [1m[36mOrderitem Load (0.1ms)[0m  [1m[34mSELECT "orderitems".* FROM "orderitems" WHERE "orderitems"."cart_id" = ?[0m  [["cart_id", 36]]
+  Rendered carts/_cart.html.erb (1.8ms)
+Completed 200 OK in 81ms (Views: 44.6ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/orderitems/create/2" for 78.16.129.40 at 2018-04-22 12:41:26 +0000
+Cannot render console from 78.16.129.40! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrderitemsController#create as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mOrderitem Load (0.1ms)[0m  [1m[34mSELECT  "orderitems".* FROM "orderitems" WHERE "orderitems"."cart_id" = ? AND "orderitems"."product_id" = ? LIMIT ?[0m  [["cart_id", 36], ["product_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "orderitems" ("product_id", "quantity", "subtotal", "created_at", "updated_at", "cart_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["product_id", 2], ["quantity", 1], ["subtotal", 1300.0], ["created_at", "2018-04-22 12:41:26.060852"], ["updated_at", "2018-04-22 12:41:26.060852"], ["cart_id", 36]]
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://3f54eb093d914c8fb0ad2117c282106a.vfs.cloud9.us-east-2.amazonaws.com/carts/36
+Completed 302 Found in 21ms (ActiveRecord: 10.4ms)
+
+
+Started GET "/carts/36" for 78.16.129.40 at 2018-04-22 12:41:26 +0000
+Cannot render console from 78.16.129.40! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"36"}
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mOrderitem Load (0.1ms)[0m  [1m[34mSELECT "orderitems".* FROM "orderitems" WHERE "orderitems"."cart_id" = ?[0m  [["cart_id", 36]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered carts/show.html.erb within layouts/application (4.2ms)
+  Rendered carts/_cart.html.erb (0.3ms)
+Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/orders/new" for 78.16.129.40 at 2018-04-22 12:41:27 +0000
+Cannot render console from 78.16.129.40! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#new as HTML
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (12.3ms)
+  [1m[36mOrderitem Load (0.1ms)[0m  [1m[34mSELECT "orderitems".* FROM "orderitems" WHERE "orderitems"."cart_id" = ?[0m  [["cart_id", 36]]
+  Rendered carts/_cart.html.erb (1.7ms)
+  Rendered orders/new.html.erb within layouts/application (16.0ms)
+  Rendered carts/_cart.html.erb (0.1ms)
+Completed 200 OK in 78ms (Views: 48.7ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/orders" for 78.16.129.40 at 2018-04-22 12:41:29 +0000
+Cannot render console from 78.16.129.40! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hxRmMm+NRrTdHkdIYfHts2Cm3GhlpcEptrDvl5qzCdlX8Jv+nJpxNf6ZZREnLx0s83FZra7nLavRcwJtGuo+SQ==", "order"=>{"user_id"=>"", "salesTax"=>"", "shippingFee"=>"", "total"=>"", "methodOfPayment"=>""}, "commit"=>"Create Order"}
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/orders_controller.rb:46:in `create'
+Started GET "/" for 78.16.129.40 at 2018-04-22 13:23:51 +0000
+Cannot render console from 78.16.129.40! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+  [1m[36mOrderitem Load (0.1ms)[0m  [1m[34mSELECT "orderitems".* FROM "orderitems" WHERE "orderitems"."cart_id" = ?[0m  [["cart_id", 36]]
+  Rendered carts/_cart.html.erb (22.9ms)
+Completed 200 OK in 355ms (Views: 333.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 78.16.129.40 at 2018-04-22 13:24:07 +0000
+Cannot render console from 78.16.129.40! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  [1m[36mOrderitem Load (0.1ms)[0m  [1m[34mSELECT "orderitems".* FROM "orderitems" WHERE "orderitems"."cart_id" = ?[0m  [["cart_id", 36]]
+  Rendered carts/_cart.html.erb (2.1ms)
+Completed 200 OK in 42ms (Views: 39.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for 78.16.129.40 at 2018-04-22 13:24:14 +0000
+Cannot render console from 78.16.129.40! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProductsController#index as HTML
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (18.5ms)
+  [1m[36mOrderitem Load (0.1ms)[0m  [1m[34mSELECT "orderitems".* FROM "orderitems" WHERE "orderitems"."cart_id" = ?[0m  [["cart_id", 36]]
+  Rendered carts/_cart.html.erb (1.9ms)
+Completed 200 OK in 72ms (Views: 53.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/orderitems/create/1" for 78.16.129.40 at 2018-04-22 13:24:17 +0000
+Cannot render console from 78.16.129.40! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrderitemsController#create as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderitem Load (0.1ms)[0m  [1m[34mSELECT  "orderitems".* FROM "orderitems" WHERE "orderitems"."cart_id" = ? AND "orderitems"."product_id" = ? LIMIT ?[0m  [["cart_id", 36], ["product_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "orderitems" ("product_id", "quantity", "subtotal", "created_at", "updated_at", "cart_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["product_id", 1], ["quantity", 1], ["subtotal", 1000.0], ["created_at", "2018-04-22 13:24:17.666764"], ["updated_at", "2018-04-22 13:24:17.666764"], ["cart_id", 36]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://3f54eb093d914c8fb0ad2117c282106a.vfs.cloud9.us-east-2.amazonaws.com/carts/36
+Completed 302 Found in 17ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/carts/36" for 78.16.129.40 at 2018-04-22 13:24:17 +0000
+Cannot render console from 78.16.129.40! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"36"}
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mOrderitem Load (0.1ms)[0m  [1m[34mSELECT "orderitems".* FROM "orderitems" WHERE "orderitems"."cart_id" = ?[0m  [["cart_id", 36]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered carts/show.html.erb within layouts/application (4.6ms)
+  Rendered carts/_cart.html.erb (0.4ms)
+Completed 200 OK in 41ms (Views: 38.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/orders/new" for 78.16.129.40 at 2018-04-22 13:24:19 +0000
+Cannot render console from 78.16.129.40! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#new as HTML
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (11.7ms)
+  [1m[36mOrderitem Load (0.1ms)[0m  [1m[34mSELECT "orderitems".* FROM "orderitems" WHERE "orderitems"."cart_id" = ?[0m  [["cart_id", 36]]
+  Rendered carts/_cart.html.erb (1.7ms)
+  Rendered orders/new.html.erb within layouts/application (15.4ms)
+  Rendered carts/_cart.html.erb (0.1ms)
+Completed 200 OK in 87ms (Views: 50.3ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/orders" for 78.16.129.40 at 2018-04-22 13:24:21 +0000
+Cannot render console from 78.16.129.40! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yG2FJ69iaIZkqtJ/V9/XGtEFB7Oylwncz7kiBXwd35UYiXjrXHVfB0ct8CYRASeFQtKCdnnV5V6oes///EToBQ==", "order"=>{"user_id"=>"", "salesTax"=>"", "shippingFee"=>"", "total"=>"", "methodOfPayment"=>""}, "commit"=>"Create Order"}
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/orders_controller.rb:46:in `create'

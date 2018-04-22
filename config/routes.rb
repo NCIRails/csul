@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :users
   resources :products
   resources :cart
+  resources :charges, only: [:new, :create]
   
   get 'productmanu/:Manu' => 'products#showbymanu', :as => :product_manu
   get 'productpricerange/:Vatprice' => 'products#showbyprice', :as => :product_price
